@@ -26,6 +26,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y ssh corkscrew gawk sed u-b
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y lib32ncurses5 lib32bz2-1.0 libc6:i386 libc6-i386 libstdc++6:i386 libncurses5:i386
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libz1:i386 libc6-dev-i386 device-tree-compiler mono-complete lzop
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y locales
+## fix build kernel
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y bc
 # && rm -rf /var/lib/apt/lists/*
 
 RUN locale-gen en_US.UTF-8
