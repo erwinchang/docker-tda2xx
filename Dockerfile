@@ -30,7 +30,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y locales
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y lib32ncurses5-dev
 ## fix build kernel
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y bc
-# && rm -rf /var/lib/apt/lists/*
+RUN rm -rf /var/lib/apt/lists/*
 
 RUN locale-gen en_US.UTF-8
 RUN DEBIAN_FRONTEND=noninteractive dpkg-reconfigure locales
