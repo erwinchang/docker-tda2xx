@@ -34,10 +34,14 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y bc
 #RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libboost-system1.55-dev libboost-thread1.55-dev libboost-log1.55-dev
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y asciidoc source-highlight doxygen graphviz
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y cmake
+#RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libbz2-dev
 RUN rm -rf /var/lib/apt/lists/*
 
 RUN locale-gen en_US.UTF-8
 RUN DEBIAN_FRONTEND=noninteractive dpkg-reconfigure locales
+
+#bash
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 #
 COPY gitconfig /root/.gitconfig
